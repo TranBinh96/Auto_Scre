@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32106.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto_Scre", "Auto_Scre\Auto_Scre.csproj", "{5519F6E0-F725-4306-B0AB-9A2128ABDEAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5519F6E0-F725-4306-B0AB-9A2128ABDEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5519F6E0-F725-4306-B0AB-9A2128ABDEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5519F6E0-F725-4306-B0AB-9A2128ABDEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5519F6E0-F725-4306-B0AB-9A2128ABDEAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F45EDDA-790F-4F9A-BB08-E2A3C3E7D92F}
+	EndGlobalSection
+EndGlobal
