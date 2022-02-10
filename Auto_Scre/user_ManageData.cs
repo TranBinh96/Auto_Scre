@@ -17,5 +17,7 @@ namespace Auto_Scre
         {
             InitializeComponent();
         }
+
+        
     }
 }

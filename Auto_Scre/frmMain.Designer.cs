@@ -61,11 +61,12 @@ namespace Auto_Scre
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.user_AutoMode1 = new Auto_Scre.user_AutoMode();
             this.user_ManageData1 = new Auto_Scre.user_ManageData();
-            this.btn_AutoMode = new DevExpress.XtraEditors.SimpleButton();
+            this.user_AutoMode1 = new Auto_Scre.user_AutoMode();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.btn_ManageData = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_AutoMode = new DevExpress.XtraEditors.SimpleButton();
+            this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.menuAuto_Scre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -321,14 +322,15 @@ namespace Auto_Scre
             this.panelControl1.Size = new System.Drawing.Size(999, 794);
             this.panelControl1.TabIndex = 1;
             // 
-            // panelControl2
+            // user_ManageData1
             // 
-            this.panelControl2.Controls.Add(this.btn_ManageData);
-            this.panelControl2.Controls.Add(this.btn_AutoMode);
-            this.panelControl2.Location = new System.Drawing.Point(1045, 38);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(203, 796);
-            this.panelControl2.TabIndex = 2;
+            this.user_ManageData1.Appearance.BackColor = System.Drawing.Color.Gainsboro;
+            this.user_ManageData1.Appearance.Options.UseBackColor = true;
+            this.user_ManageData1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user_ManageData1.Location = new System.Drawing.Point(2, 2);
+            this.user_ManageData1.Name = "user_ManageData1";
+            this.user_ManageData1.Size = new System.Drawing.Size(995, 790);
+            this.user_ManageData1.TabIndex = 1;
             // 
             // user_AutoMode1
             // 
@@ -340,33 +342,44 @@ namespace Auto_Scre
             this.user_AutoMode1.Size = new System.Drawing.Size(995, 790);
             this.user_AutoMode1.TabIndex = 0;
             // 
-            // user_ManageData1
+            // panelControl2
             // 
-            this.user_ManageData1.Appearance.BackColor = System.Drawing.Color.Gainsboro;
-            this.user_ManageData1.Appearance.Options.UseBackColor = true;
-            this.user_ManageData1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user_ManageData1.Location = new System.Drawing.Point(2, 2);
-            this.user_ManageData1.Name = "user_ManageData1";
-            this.user_ManageData1.Size = new System.Drawing.Size(995, 790);
-            this.user_ManageData1.TabIndex = 1;
+            this.panelControl2.Controls.Add(this.btnClose);
+            this.panelControl2.Controls.Add(this.btn_ManageData);
+            this.panelControl2.Controls.Add(this.btn_AutoMode);
+            this.panelControl2.Location = new System.Drawing.Point(1045, 38);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(203, 796);
+            this.panelControl2.TabIndex = 2;
+            // 
+            // btn_ManageData
+            // 
+            this.btn_ManageData.Location = new System.Drawing.Point(27, 127);
+            this.btn_ManageData.Name = "btn_ManageData";
+            this.btn_ManageData.Size = new System.Drawing.Size(152, 70);
+            this.btn_ManageData.TabIndex = 0;
+            this.btn_ManageData.Text = "Manage Data";
+            this.btn_ManageData.Click += new System.EventHandler(this.btn_ManageData_Click);
             // 
             // btn_AutoMode
             // 
-            this.btn_AutoMode.Location = new System.Drawing.Point(29, 28);
+            this.btn_AutoMode.Location = new System.Drawing.Point(27, 17);
             this.btn_AutoMode.Name = "btn_AutoMode";
-            this.btn_AutoMode.Size = new System.Drawing.Size(148, 48);
+            this.btn_AutoMode.Size = new System.Drawing.Size(152, 70);
             this.btn_AutoMode.TabIndex = 0;
             this.btn_AutoMode.Text = "Auto Mode";
             this.btn_AutoMode.Click += new System.EventHandler(this.btn_AutoMode_Click);
             // 
-            // btn_ManageData
+            // btnClose
             // 
-            this.btn_ManageData.Location = new System.Drawing.Point(29, 113);
-            this.btn_ManageData.Name = "btn_ManageData";
-            this.btn_ManageData.Size = new System.Drawing.Size(148, 48);
-            this.btn_ManageData.TabIndex = 0;
-            this.btn_ManageData.Text = "Manage Data";
-            this.btn_ManageData.Click += new System.EventHandler(this.btn_ManageData_Click);
+            this.btnClose.Appearance.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Appearance.Options.UseFont = true;
+            this.btnClose.Location = new System.Drawing.Point(27, 701);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(152, 70);
+            this.btnClose.TabIndex = 1;
+            this.btnClose.Text = "Exit";
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmMain
             // 
@@ -376,6 +389,8 @@ namespace Auto_Scre
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.menuAuto_Scre);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Automatic Screwing";
@@ -429,5 +444,6 @@ namespace Auto_Scre
         private user_ManageData user_ManageData1;
         private DevExpress.XtraEditors.SimpleButton btn_ManageData;
         private DevExpress.XtraEditors.SimpleButton btn_AutoMode;
+        private DevExpress.XtraEditors.SimpleButton btnClose;
     }
 }

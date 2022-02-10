@@ -29,13 +29,11 @@ namespace Auto_Scre
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(user_AutoMode));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.btnStart = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -46,14 +44,17 @@ namespace Auto_Scre
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.label5 = new System.Windows.Forms.Label();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.cameraControl = new DevExpress.XtraEditors.Camera.CameraControl();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
+            this.btnStart = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPause = new DevExpress.XtraEditors.SimpleButton();
+            this.btnStop = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
@@ -104,6 +105,7 @@ namespace Auto_Scre
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.cameraControl);
             this.panelControl2.Location = new System.Drawing.Point(16, 15);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(510, 349);
@@ -125,20 +127,6 @@ namespace Auto_Scre
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(994, 268);
             this.panelControl4.TabIndex = 6;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Appearance.Font = new System.Drawing.Font("Showcard Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnStart.Appearance.Options.UseFont = true;
-            this.btnStart.Appearance.Options.UseForeColor = true;
-            this.btnStart.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStart.BackgroundImage")));
-            this.btnStart.Location = new System.Drawing.Point(5, 19);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.btnStart.Size = new System.Drawing.Size(137, 57);
-            this.btnStart.TabIndex = 1;
-            this.btnStart.Text = "START";
             // 
             // panelControl6
             // 
@@ -192,8 +180,8 @@ namespace Auto_Scre
             // 
             // panelControl7
             // 
-            this.panelControl7.Controls.Add(this.simpleButton2);
-            this.panelControl7.Controls.Add(this.simpleButton1);
+            this.panelControl7.Controls.Add(this.btnStop);
+            this.panelControl7.Controls.Add(this.btnPause);
             this.panelControl7.Controls.Add(this.btnStart);
             this.panelControl7.Location = new System.Drawing.Point(823, 16);
             this.panelControl7.Name = "panelControl7";
@@ -246,16 +234,6 @@ namespace Auto_Scre
             this.label4.Text = "AVN main PCB Screw Fixing Machine";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureEdit1
-            // 
-            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureEdit1.Location = new System.Drawing.Point(0, 0);
-            this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
-            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
-            this.pictureEdit1.Size = new System.Drawing.Size(54, 38);
-            this.pictureEdit1.TabIndex = 0;
-            // 
             // label5
             // 
             this.label5.BackColor = System.Drawing.Color.White;
@@ -268,33 +246,62 @@ namespace Auto_Scre
             this.label5.Text = "Ver 1.0 (2022.3.1 )";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // simpleButton1
+            // cameraControl
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Showcard Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("simpleButton1.BackgroundImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(5, 99);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton1.Size = new System.Drawing.Size(137, 57);
-            this.simpleButton1.TabIndex = 1;
-            this.simpleButton1.Text = "START";
+            this.cameraControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cameraControl.Location = new System.Drawing.Point(2, 2);
+            this.cameraControl.Name = "cameraControl";
+            this.cameraControl.Size = new System.Drawing.Size(506, 345);
+            this.cameraControl.TabIndex = 0;
+            this.cameraControl.Text = "cameraControl";
+            this.cameraControl.Click += new System.EventHandler(this.cameraControl_Click);
             // 
-            // simpleButton2
+            // pictureEdit1
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Showcard Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("simpleButton2.BackgroundImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(5, 174);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.PaintStyle = DevExpress.XtraEditors.Controls.PaintStyles.Light;
-            this.simpleButton2.Size = new System.Drawing.Size(137, 57);
-            this.simpleButton2.TabIndex = 1;
-            this.simpleButton2.Text = "START";
+            this.pictureEdit1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureEdit1.EditValue = global::Auto_Scre.Properties.Resources._1;
+            this.pictureEdit1.Location = new System.Drawing.Point(0, 0);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
+            this.pictureEdit1.Size = new System.Drawing.Size(54, 38);
+            this.pictureEdit1.TabIndex = 0;
+            // 
+            // btnStart
+            // 
+            this.btnStart.Appearance.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnStart.Appearance.Options.UseFont = true;
+            this.btnStart.Appearance.Options.UseForeColor = true;
+            this.btnStart.Location = new System.Drawing.Point(5, 16);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(139, 63);
+            this.btnStart.TabIndex = 0;
+            this.btnStart.Text = "START";
+            // 
+            // btnPause
+            // 
+            this.btnPause.Appearance.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPause.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnPause.Appearance.Options.UseFont = true;
+            this.btnPause.Appearance.Options.UseForeColor = true;
+            this.btnPause.Location = new System.Drawing.Point(5, 97);
+            this.btnPause.Name = "btnPause";
+            this.btnPause.Size = new System.Drawing.Size(139, 61);
+            this.btnPause.TabIndex = 0;
+            this.btnPause.Text = "PAUSE";
+            // 
+            // btnStop
+            // 
+            this.btnStop.Appearance.Font = new System.Drawing.Font("Showcard Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStop.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.btnStop.Appearance.Options.UseFont = true;
+            this.btnStop.Appearance.Options.UseForeColor = true;
+            this.btnStop.Location = new System.Drawing.Point(5, 181);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(139, 61);
+            this.btnStop.TabIndex = 0;
+            this.btnStop.Text = "STOP";
             // 
             // user_AutoMode
             // 
@@ -305,10 +312,12 @@ namespace Auto_Scre
             this.Controls.Add(this.panelControl1);
             this.Name = "user_AutoMode";
             this.Size = new System.Drawing.Size(999, 794);
+            this.Load += new System.EventHandler(this.user_AutoMode_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
             this.panelControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
@@ -333,7 +342,6 @@ namespace Auto_Scre
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         private DevExpress.XtraEditors.PanelControl panelControl4;
-        private DevExpress.XtraEditors.SimpleButton btnStart;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraEditors.PanelControl panelControl5;
         private System.Windows.Forms.TextBox textBox3;
@@ -346,7 +354,9 @@ namespace Auto_Scre
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.Camera.CameraControl cameraControl;
+        private DevExpress.XtraEditors.SimpleButton btnStart;
+        private DevExpress.XtraEditors.SimpleButton btnStop;
+        private DevExpress.XtraEditors.SimpleButton btnPause;
     }
 }

@@ -1,4 +1,7 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Data.Camera;
+using DevExpress.Utils;
+using DevExpress.XtraEditors;
+using DevExpress.XtraEditors.Camera;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +19,20 @@ namespace Auto_Scre
         public user_AutoMode()
         {
             InitializeComponent();
+        }
+
+        private void cameraControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        bool isStopped = false;
+        Bitmap img;
+        private void user_AutoMode_Load(object sender, EventArgs e)
+        {
+            img = cameraControl.TakeSnapshot();
+            cameraControl.Stop();
+            isStopped = true;
         }
     }
 }
