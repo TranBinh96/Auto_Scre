@@ -12,11 +12,17 @@ using DevExpress.Utils.Localization;
 using DevExpress.XtraEditors.Camera;
 using DevExpress.Data.Camera;
 using DevExpress.Utils;
+using Auto_Scre.Data.EF.Context;
+using System.Data.SqlClient;
+using System.Data.Common;
 
 namespace Auto_Scre
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
+        static AppDbContext sql= new AppDbContext();
+        static SqlConnection connection = sql.Connectiondb(); 
+
         public frmMain()
         {
             InitializeComponent();
@@ -44,7 +50,7 @@ namespace Auto_Scre
             args.Showing += Args_Showing;
             args.Caption = "Message";
             args.Text = "Do you want stop program ?.";
-            args.Buttons = new DialogResult[] { DialogResult.OK, DialogResult.Cancel, DialogResult.Retry };
+            args.Buttons = new DialogResult[] { DialogResult.No, DialogResult.Cancel, DialogResult.Yes };
             XtraMessageBox.Show(args);
         }
         private void Args_Showing(object sender, XtraMessageShowingArgs e)
@@ -69,6 +75,45 @@ namespace Auto_Scre
             }
         }
 
-        
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+           
+
+        }
+
+        private void btnTestConnectDB_Click(object sender, EventArgs e)
+        {   
+            
+            connection.Open();
+            string info = "";
+
+            // Dùng SqlCommand thi hành SQL  - sẽ  tìm hiểu sau
+            using (DbCommand command = connection.CreateCommand())
+            {
+                // Câu truy vấn SQL
+                command.CommandText = "select top(5) * from student";
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                   info +=($"{reader["name"],3} {reader["address"]}\n");
+                }
+            }
+            MessageBox.Show(info);
+
+            // Lấy thống kê và in số liệu thống kê
+            string report = "";
+            Console.WriteLine("Thông tin thống kê các tương tác đã thực hiện trên kết nôis");
+            var dicStatics = connection.RetrieveStatistics();
+            foreach (var key in dicStatics.Keys)
+            {
+                report+=($"{key,17} : {dicStatics[key]}\n");
+            }
+            MessageBox.Show(report);
+
+            // Không dùng đến kết nối thì phải đóng lại (giải phóng)
+            connection.Close();
+
+
+        }
     }
 }

@@ -1,0 +1,5 @@
+{
+  "csdl": {
+    "db01": "Data Source=DESKTOP-CVOUMT1;Initial Catalog=Test;Integrated Security=True"
+  }
+}
