@@ -30,9 +30,10 @@ namespace Auto_Scre
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraCharts.XYDiagram xyDiagram2 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.ScatterLineSeriesView scatterLineSeriesView2 = new DevExpress.XtraCharts.ScatterLineSeriesView();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.StackedLineSeriesView stackedLineSeriesView1 = new DevExpress.XtraCharts.StackedLineSeriesView();
+            DevExpress.XtraCharts.StackedLineSeriesView stackedLineSeriesView2 = new DevExpress.XtraCharts.StackedLineSeriesView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,20 +56,20 @@ namespace Auto_Scre
             this.btn_Data_View = new DevExpress.XtraEditors.SimpleButton();
             this.btn_Excel_View = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.studentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.testDataSet1 = new Auto_Scre.TestDataSet();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coladdress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.studentTableAdapter1 = new Auto_Scre.TestDataSetTableAdapters.studentTableAdapter();
-            this.testDataSet1 = new Auto_Scre.TestDataSet();
             this.testDataSet2 = new Auto_Scre.TestDataSet();
             this.studentTableAdapter2 = new Auto_Scre.TestDataSetTableAdapters.studentTableAdapter();
             this.testDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coladdress = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.studentBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -79,20 +80,21 @@ namespace Auto_Scre
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(scatterLineSeriesView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl2
@@ -404,65 +406,6 @@ namespace Auto_Scre
             this.panelControl1.Size = new System.Drawing.Size(983, 241);
             this.panelControl1.TabIndex = 3;
             // 
-            // panelControl2
-            // 
-            this.panelControl2.Controls.Add(this.chartControl1);
-            this.panelControl2.Location = new System.Drawing.Point(3, 528);
-            this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(985, 263);
-            this.panelControl2.TabIndex = 4;
-            // 
-            // chartControl1
-            // 
-            this.chartControl1.DataAdapter = this.studentTableAdapter1;
-            this.chartControl1.DataSource = this.testDataSet1.student;
-            xyDiagram2.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram2.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl1.Diagram = xyDiagram2;
-            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartControl1.Legend.Name = "Default Legend";
-            this.chartControl1.Location = new System.Drawing.Point(2, 2);
-            this.chartControl1.Name = "chartControl1";
-            series2.Name = "Series 1";
-            series2.View = scatterLineSeriesView2;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl1.Size = new System.Drawing.Size(981, 259);
-            this.chartControl1.TabIndex = 0;
-            // 
-            // studentTableAdapter1
-            // 
-            this.studentTableAdapter1.ClearBeforeFill = true;
-            // 
-            // testDataSet1
-            // 
-            this.testDataSet1.DataSetName = "TestDataSet";
-            this.testDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // testDataSet2
-            // 
-            this.testDataSet2.DataSetName = "TestDataSet";
-            this.testDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // studentTableAdapter2
-            // 
-            this.studentTableAdapter2.ClearBeforeFill = true;
-            // 
-            // testDataSet1BindingSource
-            // 
-            this.testDataSet1BindingSource.DataSource = this.testDataSet1;
-            this.testDataSet1BindingSource.Position = 0;
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "student";
-            this.studentBindingSource.DataSource = this.testDataSet1BindingSource;
-            // 
-            // studentBindingSource1
-            // 
-            this.studentBindingSource1.DataMember = "student";
-            this.studentBindingSource1.DataSource = this.testDataSet1BindingSource;
-            // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.studentBindingSource2;
@@ -474,6 +417,16 @@ namespace Auto_Scre
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // studentBindingSource2
+            // 
+            this.studentBindingSource2.DataMember = "student";
+            this.studentBindingSource2.DataSource = this.testDataSet1;
+            // 
+            // testDataSet1
+            // 
+            this.testDataSet1.DataSetName = "TestDataSet";
+            this.testDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -499,10 +452,62 @@ namespace Auto_Scre
             this.coladdress.Visible = true;
             this.coladdress.VisibleIndex = 1;
             // 
-            // studentBindingSource2
+            // panelControl2
             // 
-            this.studentBindingSource2.DataMember = "student";
-            this.studentBindingSource2.DataSource = this.testDataSet1;
+            this.panelControl2.Controls.Add(this.chartControl1);
+            this.panelControl2.Location = new System.Drawing.Point(3, 528);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(985, 263);
+            this.panelControl2.TabIndex = 4;
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.DataAdapter = this.studentTableAdapter1;
+            this.chartControl1.DataSource = this.testDataSet1.student;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl1.Diagram = xyDiagram1;
+            this.chartControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControl1.Legend.Name = "Default Legend";
+            this.chartControl1.Location = new System.Drawing.Point(2, 2);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.PaletteName = "Black and White";
+            series1.LabelsVisibility = DevExpress.Utils.DefaultBoolean.True;
+            series1.Name = "Series 1";
+            series1.View = stackedLineSeriesView1;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl1.SeriesTemplate.View = stackedLineSeriesView2;
+            this.chartControl1.Size = new System.Drawing.Size(981, 259);
+            this.chartControl1.TabIndex = 0;
+            // 
+            // studentTableAdapter1
+            // 
+            this.studentTableAdapter1.ClearBeforeFill = true;
+            // 
+            // testDataSet2
+            // 
+            this.testDataSet2.DataSetName = "TestDataSet";
+            this.testDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTableAdapter2
+            // 
+            this.studentTableAdapter2.ClearBeforeFill = true;
+            // 
+            // testDataSet1BindingSource
+            // 
+            this.testDataSet1BindingSource.DataSource = this.testDataSet1;
+            this.testDataSet1BindingSource.Position = 0;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "student";
+            this.studentBindingSource.DataSource = this.testDataSet1BindingSource;
+            // 
+            // studentBindingSource1
+            // 
+            this.studentBindingSource1.DataMember = "student";
+            this.studentBindingSource1.DataSource = this.testDataSet1BindingSource;
             // 
             // user_ManageData
             // 
@@ -530,20 +535,21 @@ namespace Auto_Scre
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(scatterLineSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(stackedLineSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.testDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
