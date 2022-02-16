@@ -133,7 +133,9 @@ namespace Auto_Scre
             // 
             // cameraControl
             // 
+            this.cameraControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cameraControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cameraControl.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
             this.cameraControl.Location = new System.Drawing.Point(2, 2);
             this.cameraControl.Name = "cameraControl";
             this.cameraControl.Size = new System.Drawing.Size(506, 345);

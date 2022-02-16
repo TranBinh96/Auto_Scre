@@ -41,6 +41,7 @@ namespace Auto_Scre
         private void btn_ManageData_Click(object sender, EventArgs e)
         {
             user_ManageData1.BringToFront();
+            user_ManageData user = new user_ManageData();
         }
 
         
