@@ -106,3 +106,4 @@ F:\Learning\Auto_Scre\Auto_Scre.Data.EF\obj\Debug\Auto_Scre.Data.EF.csproj.CopyC
 F:\Learning\Auto_Scre\Auto_Scre.Data.EF\obj\Debug\Auto_Scre.Data.EF.dll
 F:\Learning\Auto_Scre\Auto_Scre.Data.EF\obj\Debug\Auto_Scre.Data.EF.pdb
 F:\Learning\Auto_Scre\Auto_Scre.Data.EF\obj\Debug\Auto_Scre.Data.EF.csproj.AssemblyReference.cache
+F:\Learning\Auto_Scre\Auto_Scre.Data.EF\bin\Debug\Auto_Scre.Data.EF.dll.config

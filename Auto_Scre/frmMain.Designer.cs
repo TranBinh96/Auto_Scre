@@ -61,12 +61,15 @@ namespace Auto_Scre
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.user_ManageData1 = new Auto_Scre.user_ManageData();
+            this.user_AutoMode1 = new Auto_Scre.user_AutoMode();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnMachine_Setup = new DevExpress.XtraEditors.SimpleButton();
             this.btnTestConnectDB = new DevExpress.XtraEditors.SimpleButton();
             this.btnClose = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ManageData = new DevExpress.XtraEditors.SimpleButton();
             this.btn_AutoMode = new DevExpress.XtraEditors.SimpleButton();
-            this.user_AutoMode1 = new Auto_Scre.user_AutoMode();
+            this.use_Machine_Setup1 = new Auto_Scre.use_Machine_Setup();
             this.menuAuto_Scre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -315,14 +318,37 @@ namespace Auto_Scre
             this.panelControl1.Appearance.BackColor = System.Drawing.Color.White;
             this.panelControl1.Appearance.Options.UseBackColor = true;
             this.panelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panelControl1.Controls.Add(this.use_Machine_Setup1);
+            this.panelControl1.Controls.Add(this.user_ManageData1);
             this.panelControl1.Controls.Add(this.user_AutoMode1);
             this.panelControl1.Location = new System.Drawing.Point(12, 38);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(999, 794);
             this.panelControl1.TabIndex = 1;
             // 
+            // user_ManageData1
+            // 
+            this.user_ManageData1.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.user_ManageData1.Appearance.Options.UseBackColor = true;
+            this.user_ManageData1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user_ManageData1.Location = new System.Drawing.Point(2, 2);
+            this.user_ManageData1.Name = "user_ManageData1";
+            this.user_ManageData1.Size = new System.Drawing.Size(995, 790);
+            this.user_ManageData1.TabIndex = 1;
+            // 
+            // user_AutoMode1
+            // 
+            this.user_AutoMode1.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.user_AutoMode1.Appearance.Options.UseBackColor = true;
+            this.user_AutoMode1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user_AutoMode1.Location = new System.Drawing.Point(2, 2);
+            this.user_AutoMode1.Name = "user_AutoMode1";
+            this.user_AutoMode1.Size = new System.Drawing.Size(995, 790);
+            this.user_AutoMode1.TabIndex = 0;
+            // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.btnMachine_Setup);
             this.panelControl2.Controls.Add(this.btnTestConnectDB);
             this.panelControl2.Controls.Add(this.btnClose);
             this.panelControl2.Controls.Add(this.btn_ManageData);
@@ -332,6 +358,17 @@ namespace Auto_Scre
             this.panelControl2.Size = new System.Drawing.Size(203, 796);
             this.panelControl2.TabIndex = 2;
             this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
+            // 
+            // btnMachine_Setup
+            // 
+            this.btnMachine_Setup.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMachine_Setup.Appearance.Options.UseFont = true;
+            this.btnMachine_Setup.Location = new System.Drawing.Point(27, 229);
+            this.btnMachine_Setup.Name = "btnMachine_Setup";
+            this.btnMachine_Setup.Size = new System.Drawing.Size(152, 66);
+            this.btnMachine_Setup.TabIndex = 3;
+            this.btnMachine_Setup.Text = "Machine Setup";
+            this.btnMachine_Setup.Click += new System.EventHandler(this.btnMachine_Setup_Click);
             // 
             // btnTestConnectDB
             // 
@@ -357,6 +394,8 @@ namespace Auto_Scre
             // 
             // btn_ManageData
             // 
+            this.btn_ManageData.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ManageData.Appearance.Options.UseFont = true;
             this.btn_ManageData.Location = new System.Drawing.Point(27, 127);
             this.btn_ManageData.Name = "btn_ManageData";
             this.btn_ManageData.Size = new System.Drawing.Size(152, 70);
@@ -366,6 +405,8 @@ namespace Auto_Scre
             // 
             // btn_AutoMode
             // 
+            this.btn_AutoMode.Appearance.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AutoMode.Appearance.Options.UseFont = true;
             this.btn_AutoMode.Location = new System.Drawing.Point(27, 17);
             this.btn_AutoMode.Name = "btn_AutoMode";
             this.btn_AutoMode.Size = new System.Drawing.Size(152, 70);
@@ -373,15 +414,13 @@ namespace Auto_Scre
             this.btn_AutoMode.Text = "Auto Mode";
             this.btn_AutoMode.Click += new System.EventHandler(this.btn_AutoMode_Click);
             // 
-            // user_AutoMode1
+            // use_Machine_Setup1
             // 
-            this.user_AutoMode1.Appearance.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.user_AutoMode1.Appearance.Options.UseBackColor = true;
-            this.user_AutoMode1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user_AutoMode1.Location = new System.Drawing.Point(2, 2);
-            this.user_AutoMode1.Name = "user_AutoMode1";
-            this.user_AutoMode1.Size = new System.Drawing.Size(995, 790);
-            this.user_AutoMode1.TabIndex = 0;
+            this.use_Machine_Setup1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.use_Machine_Setup1.Location = new System.Drawing.Point(2, 2);
+            this.use_Machine_Setup1.Name = "use_Machine_Setup1";
+            this.use_Machine_Setup1.Size = new System.Drawing.Size(995, 790);
+            this.use_Machine_Setup1.TabIndex = 2;
             // 
             // frmMain
             // 
@@ -447,5 +486,8 @@ namespace Auto_Scre
         private DevExpress.XtraEditors.SimpleButton btn_AutoMode;
         private DevExpress.XtraEditors.SimpleButton btnClose;
         private DevExpress.XtraEditors.SimpleButton btnTestConnectDB;
+        private user_ManageData user_ManageData1;
+        private DevExpress.XtraEditors.SimpleButton btnMachine_Setup;
+        private use_Machine_Setup use_Machine_Setup1;
     }
 }

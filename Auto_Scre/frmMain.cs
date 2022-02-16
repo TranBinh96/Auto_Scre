@@ -15,13 +15,15 @@ using DevExpress.Utils;
 using Auto_Scre.Data.EF.Context;
 using System.Data.SqlClient;
 using System.Data.Common;
+using Auto_Scre.Data.EF;
+using sun.security.util;
 
 namespace Auto_Scre
 {
     public partial class frmMain : DevExpress.XtraEditors.XtraForm
     {
-        static AppDbContext sql= new AppDbContext();
-        static SqlConnection connection = sql.Connectiondb(); 
+        static AppDbContext sql = new AppDbContext();
+        static SqlConnection connection = sql.Connectiondb();
 
         public frmMain()
         {
@@ -41,10 +43,9 @@ namespace Auto_Scre
         private void btn_ManageData_Click(object sender, EventArgs e)
         {
             user_ManageData1.BringToFront();
-            user_ManageData user = new user_ManageData();
         }
 
-        
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             XtraMessageBoxArgs args = new XtraMessageBoxArgs();
@@ -78,13 +79,13 @@ namespace Auto_Scre
 
         private void panelControl2_Paint(object sender, PaintEventArgs e)
         {
-           
+
 
         }
 
         private void btnTestConnectDB_Click(object sender, EventArgs e)
-        {   
-            
+        {
+
             connection.Open();
             string info = "";
 
@@ -92,11 +93,11 @@ namespace Auto_Scre
             using (DbCommand command = connection.CreateCommand())
             {
                 // Câu truy vấn SQL
-                command.CommandText = "select top(5) * from student";
+                command.CommandText = "select top(5) * from customer";
                 var reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                   info +=($"{reader["name"],3} {reader["address"]}\n");
+                    info += ($"{reader["name"],3} {reader["address"]}\n");
                 }
             }
             MessageBox.Show(info);
@@ -107,13 +108,38 @@ namespace Auto_Scre
             var dicStatics = connection.RetrieveStatistics();
             foreach (var key in dicStatics.Keys)
             {
-                report+=($"{key,17} : {dicStatics[key]}\n");
+                report += ($"{key,17} : {dicStatics[key]}\n");
             }
             MessageBox.Show(report);
 
             // Không dùng đến kết nối thì phải đóng lại (giải phóng)
             connection.Close();
 
+
+        }
+
+        private void btnMachine_Setup_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TextEdit textEdit = new TextEdit();
+                textEdit.Properties.PasswordChar = '*';
+                XtraInputBoxArgs args = new XtraInputBoxArgs();
+                args.Caption = "Check Pass";
+                args.Prompt = "Entrez la quantité";
+                args.Editor = textEdit;
+                var password = null;
+                password = XtraInputBox.Show(args).ToString();
+                string pass = password.ToString();
+                string passAdmin = "lge";
+                if (pass == passAdmin)  
+                    use_Machine_Setup1.BringToFront();
+                else
+                    user_AutoMode1.BringToFront();
+            }catch(Exception ex)
+            {
+                user_AutoMode1.BringToFront();
+            }
 
         }
     }

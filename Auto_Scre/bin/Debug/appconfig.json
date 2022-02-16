@@ -1,5 +1,5 @@
 {
   "csdl": {
-    "db01": "Data Source=DESKTOP-CVOUMT1;Initial Catalog=Test;Integrated Security=True"
+    "db01": "Data Source=TRANBIN;Initial Catalog=Test;Integrated Security=True"
   }
 }

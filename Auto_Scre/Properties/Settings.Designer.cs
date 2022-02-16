@@ -32,5 +32,15 @@ namespace Auto_Scre.Properties {
                 return ((string)(this["TestConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TRANBIN;Initial Catalog=Test;Integrated Security=True")]
+        public string TestConnectionString1 {
+            get {
+                return ((string)(this["TestConnectionString1"]));
+            }
+        }
     }
 }
