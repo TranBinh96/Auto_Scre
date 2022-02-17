@@ -464,7 +464,6 @@ F:\Learning\Auto_Scre\Auto_Scre\obj\Debug\Auto_Scre.pdb
 F:\Learning\Auto_Scre\Auto_Scre\bin\Debug\DevExpress.XtraCharts.v19.2.Extensions.dll
 F:\Learning\Auto_Scre\Auto_Scre\bin\Debug\Auto_Scre.Data.EF.dll.config
 F:\Learning\Auto_Scre\Auto_Scre\obj\Debug\Auto_Scre.user_ManageData.resources
-F:\Learning\Auto_Scre\Auto_Scre\obj\Debug\Auto_Scre.frmCheckUser.resources
 F:\Learning\Auto_Scre\Auto_Scre\bin\Debug\IKVM.AWT.WinForms.dll
 F:\Learning\Auto_Scre\Auto_Scre\bin\Debug\IKVM.OpenJDK.Beans.dll
 F:\Learning\Auto_Scre\Auto_Scre\bin\Debug\IKVM.OpenJDK.Charsets.dll

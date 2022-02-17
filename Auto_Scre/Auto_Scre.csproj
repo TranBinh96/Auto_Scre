@@ -180,12 +180,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmCheckUser.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmCheckUser.Designer.cs">
-      <DependentUpon>frmCheckUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,9 +206,6 @@
     <Compile Include="use_Machine_Setup.Designer.cs">
       <DependentUpon>use_Machine_Setup.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmCheckUser.resx">
-      <DependentUpon>frmCheckUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

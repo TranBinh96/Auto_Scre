@@ -119,27 +119,18 @@ namespace Auto_Scre
         }
 
         private void btnMachine_Setup_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                TextEdit textEdit = new TextEdit();
-                textEdit.Properties.PasswordChar = '*';
-                XtraInputBoxArgs args = new XtraInputBoxArgs();
-                args.Caption = "Check Pass";
-                args.Prompt = "Entrez la quantité";
-                args.Editor = textEdit;
-                var password = null;
-                password = XtraInputBox.Show(args).ToString();
-                string pass = password.ToString();
-                string passAdmin = "lge";
-                if (pass == passAdmin)  
-                    use_Machine_Setup1.BringToFront();
-                else
-                    user_AutoMode1.BringToFront();
-            }catch(Exception ex)
-            {
+        {            
+            TextEdit textEdit = new TextEdit();
+            textEdit.Properties.PasswordChar = '*';
+            XtraInputBoxArgs args = new XtraInputBoxArgs();
+            args.Caption = "Check Pass";
+            args.Prompt = "Entrez la quantité";
+            args.Editor = textEdit;
+            string password = (string)XtraInputBox.Show(args);
+            if (password == "lge" || password == "e")  
+                use_Machine_Setup1.BringToFront();
+            else
                 user_AutoMode1.BringToFront();
-            }
 
         }
     }
